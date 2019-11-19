@@ -4,7 +4,7 @@
 .container .nav-left{
     min-width: 180px;
     height:calc(100vh) ;
-    background-color: red;
+    background-color: #001529;
 }
 .container .main{
     flex: 1;

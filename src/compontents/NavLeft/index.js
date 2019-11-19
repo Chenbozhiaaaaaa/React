@@ -1,9 +1,30 @@
+import  './index.css'
 import React, { Component } from 'react'
 import MenuConfig from './../../config/menuConfig'
-import { Menu, Icon } from 'antd';
-const { SubMenu } = Menu;
-
+import { Menu, Icon } from 'antd'
+const { SubMenu } = Menu
 export default class NavLeft extends Component {
+    componentWillMount(){
+        const menuTreeNode= this.renderMenu(MenuConfig)
+        this.setState({
+            menuTreeNode
+        })
+    }
+    //菜单渲染
+    renderMenu=(data)=>{
+        return data.map((item)=>{
+            if(item.children){
+               return(
+                   <SubMenu title={item.title} key={item.key}>
+                    {this.renderMenu(item.children)}   
+                   </SubMenu>
+               ) 
+            }
+            return  <Menu.Item title={item.title} key={item.key}>
+                {item.title}
+            </Menu.Item>
+        })
+    }
     render() {
         return (
             <div>
@@ -13,16 +34,7 @@ export default class NavLeft extends Component {
                     </h1>
                 </div>
                 <Menu theme="dark">
-                    <SubMenu key="sub1" title='Item'>
-                        <Menu.ItemGroup title="Item 1">
-                            <Menu.Item key="1">Option 1</Menu.Item>
-                            <Menu.Item key="2">Option 2</Menu.Item>
-                        </Menu.ItemGroup>
-                        <Menu.ItemGroup title="Iteom 2">
-                            <Menu.Item key="3">Option 3</Menu.Item>
-                            <Menu.Item key="4">Option 4</Menu.Item>
-                        </Menu.ItemGroup>
-                    </SubMenu>
+                    {this.state.menuTreeNode}
                 </Menu>
             </div>
         )
