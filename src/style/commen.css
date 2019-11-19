@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+}
+.container .nav-left{
+    min-width: 180px;
+    height:calc(100vh) ;
+    background-color: red;
+}
+.container .main{
+    flex: 1;
+}
+.container .content{
+    position: relative;
+    padding: 20px;
+}
