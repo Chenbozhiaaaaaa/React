@@ -18,13 +18,12 @@
 }
 .header .breadcrumb .breadcrumb-title{
     text-align: center;
-    font-size: 18px;
     /* position: relative; */
 }
 .header .breadcrumb .breadcrumb-title:after{
     position: absolute;
     content: '';
-    left: 89px;
+    left: 73px;
     top: 39px;
     border-top: 9px solid #fff;
     border-left:12px solid transparent;

@@ -18,18 +18,10 @@
 }
 .header .breadcrumb .breadcrumb-title{
     text-align: center;
-    font-size: 18px;
-    /* position: relative; */
+    position: relative;
 }
 .header .breadcrumb .breadcrumb-title:after{
-    position: absolute;
-    content: '';
-    left: 89px;
-    top: 39px;
-    border-top: 9px solid #fff;
-    border-left:12px solid transparent;
-    border-right:12px solid transparent;
-    /* background-color: red; */
+    
 }
 .header .breadcrumb .weather{
     text-align: right;
