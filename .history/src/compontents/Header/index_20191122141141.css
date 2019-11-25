@@ -16,9 +16,4 @@
 .header .breadcrumb .breadcrumb-title{
     text-align: center;
 }
-.header .breadcrumb .weather{
-    text-align: right;
-}
-.header .breadcrumb .weather .date{
-    margin-right: 10px;
-}
+.header .breadcrumb

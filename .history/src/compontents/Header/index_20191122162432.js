@@ -47,7 +47,7 @@ export default class Header extends Component {
                     <Col span={20} className='weather'>
                         <span className="date">{this.state.sysTime}</span>
                         <span className='weather-detail'>{this.state.weatherDatas} </span>
-                        <span className='weather-detail'> 气温:{this.state.weatherDatash}/{this.state.weatherDatasl}</span>
+                        <span className='weather-detail'> 气温：{this.state.weatherDatash}/{this.state.weatherDatasl}</span>
                      
                     </Col>
                 </Row>

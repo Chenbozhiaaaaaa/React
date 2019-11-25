@@ -22,13 +22,7 @@ export default class Header extends Component {
             url:`http://wthrcdn.etouch.cn/weather_mini?city=${city}`
         }).then(res=>{
             console.log(res);
-            if(res.status=='1000'){
-                this.setState({
-                    weatherDatas:res.data.forecast[0].type,
-                    weatherDatash:(res.data.forecast[0].high).substring(2),
-                    weatherDatasl:(res.data.forecast[0].low).substring(2)
-                })
-            }
+            
         })
     }
     render() {
@@ -46,9 +40,7 @@ export default class Header extends Component {
                     </Col>
                     <Col span={20} className='weather'>
                         <span className="date">{this.state.sysTime}</span>
-                        <span className='weather-detail'>{this.state.weatherDatas} </span>
-                        <span className='weather-detail'> 气温:{this.state.weatherDatash}/{this.state.weatherDatasl}</span>
-                     
+                        <span className='weather-detail'>雾霾</span>
                     </Col>
                 </Row>
             </div>
