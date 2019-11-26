@@ -1,3 +1,7 @@
 .card-wrap button{
     margin-right: 10px;
 } 
+.vertical-center-modal{
+    text-align: center;
+    white-space: nowrap;
+}

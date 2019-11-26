@@ -53,7 +53,10 @@ export default class Buttons extends Component {
                         <Radio value='small'>小</Radio>
                         <Radio value='default'>中</Radio>
                         <Radio value='large'>大</Radio>
-                    </Radio.Group>   
+                    </Radio.Group> 
+                    <Button type="primary" size={this.state.size}>button</Button>
+                    <Button type="primary" size={this.state.size}>button</Button>
+                    <Button type="primary" size={this.state.size}>button</Button> 
                 </Card>
             </div>
         )
