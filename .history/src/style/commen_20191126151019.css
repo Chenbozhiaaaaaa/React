@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+}
+.container .nav-left{
+    min-width: 180px;
+    height:calc(100vh) ;
+    background-color: #001529;
+}
+.container .main{
+    overflow: auto;
+    background-color: #f1f3f5;
+}
+.container .content{
+    position: relative;
+    padding: 20px;
+}
