@@ -1,6 +1,7 @@
 {
   "name": "myreact",
   "version": "0.1.0",
+  // 后加
   "homepage": ".",
   "private": true,
   "dependencies": {

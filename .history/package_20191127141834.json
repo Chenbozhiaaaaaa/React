@@ -1,7 +1,7 @@
 {
   "name": "myreact",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": ".",//后加
   "private": true,
   "dependencies": {
     "@babel/core": "7.6.0",
