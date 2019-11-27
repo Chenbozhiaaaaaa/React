@@ -20,7 +20,7 @@ export default class Loadings extends Component {
                     <Spin tip='搁那等会...'>
                         <Alert message="react" type="warning" description="人间不值得"></Alert>
                     </Spin>
-                    <Spin tip='搁那等会...' indicator={icon}>
+                    <Spin tip='搁那等会...'>
                         <Alert message="react" type="warning" description="人间不值得"></Alert>
                     </Spin>
                 </Card>

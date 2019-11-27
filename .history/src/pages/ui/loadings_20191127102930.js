@@ -3,7 +3,7 @@ import { Card, Button, Spin, Icon, Alert } from 'antd'
 import './ui.css'
 export default class Loadings extends Component {
     render() {
-        const icon = <Icon type="loading" style={{fontSize:24}} />
+        const icon = <Icon type="loadings" />
         return (
             <div>
                 <Card title="Spin的用法" className='card-wrap'>
@@ -18,9 +18,6 @@ export default class Loadings extends Component {
                         <Alert message="react" type="warning" description="人间不值得"></Alert>
                     </Spin>
                     <Spin tip='搁那等会...'>
-                        <Alert message="react" type="warning" description="人间不值得"></Alert>
-                    </Spin>
-                    <Spin tip='搁那等会...' indicator={icon}>
                         <Alert message="react" type="warning" description="人间不值得"></Alert>
                     </Spin>
                 </Card>
