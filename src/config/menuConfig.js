@@ -25,7 +25,15 @@ const menuList =[
             },
             {
                 title:'全局Message',
-                key:'/admin/ui/messsages'
+                key:'/admin/ui/messages'
+            },
+            {
+                title:'Tab页签',
+                key:'/admin/ui/tabs'
+            },
+            {
+                title:'图片画廊',
+                key:'/admin/ui/qallery'
             }
         ]
     },
