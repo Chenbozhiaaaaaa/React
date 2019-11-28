@@ -29,9 +29,9 @@ module.exports = function(proxy, allowedHost) {
     // specified the `proxy` setting. Finally, we let you override it if you
     // really know what you're doing with a special environment variable.
        // 打包时补充，解决路径问题
-    publicPath: process.env.NODE_ENV === 'production'
-? './' +config.build.assetsPublicPath
-: './' + config.dev.assetsPublicPath,
+//     publicPath: process.env.NODE_ENV === 'production'
+// ? './' +config.build.assetsPublicPath
+// : './' + config.dev.assetsPublicPath,
     disableHostCheck:
       !proxy || process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true',
     // Enable gzip compression of generated files.

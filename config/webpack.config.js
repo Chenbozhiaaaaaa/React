@@ -169,7 +169,7 @@ module.exports = function(webpackEnv) {
     ].filter(Boolean),
     output: {
       // 打包时补充，解决路径问题
-      publicPath:'./',
+      // publicPath:'./',
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
       // Add /* filename */ comments to generated require()s in the output.
