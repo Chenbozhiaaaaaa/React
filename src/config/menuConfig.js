@@ -33,7 +33,11 @@ const menuList =[
             },
             {
                 title:'图片画廊',
-                key:'/admin/ui/qallery'
+                key:'/admin/ui/gallery'
+            },
+            {
+                title:'跑马灯',
+                key:'/admin/ui/carousel'
             }
         ]
     },

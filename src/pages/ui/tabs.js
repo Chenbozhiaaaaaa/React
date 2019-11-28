@@ -3,6 +3,7 @@ import { Card, Button, Icon, Tabs, message } from 'antd'
 import './ui.css'
 const { TabPane } = Tabs;
 export default class Tab extends Component {
+    newTabIndex=0;
     componentWillMount() {
         const panes = [
             { title: 'Tab 1', content: 'Content of Tab 1', key: '1' },
@@ -27,6 +28,12 @@ export default class Tab extends Component {
     onEdit = (targetKey, action) => {
         this[action](targetKey);
     };
+    add = () => {
+        const { panes } = this.state;
+        const activeKey = `newTab${this.newTabIndex++}`;
+        panes.push({ title: 'New Tab', content: 'Content of new Tab', key: activeKey });
+        this.setState({ panes, activeKey });
+    };
     remove = targetKey => {
         let { activeKey } = this.state;
         let lastIndex;
@@ -43,12 +50,6 @@ export default class Tab extends Component {
                 activeKey = panes[0].key;
             }
         }
-        this.setState({ panes, activeKey });
-    };
-    add = () => {
-        const { panes } = this.state;
-        const activeKey = `newTab${this.newTabIndex++}`;
-        panes.push({ title: 'New Tab', content: 'Content of new Tab', key: activeKey });
         this.setState({ panes, activeKey });
     };
     render() {

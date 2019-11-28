@@ -8,3 +8,19 @@
     text-align: center;
     white-space: nowrap;
 }
+/* 轮播图样式开始 */
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    overflow: hidden;
+  }
+  
+  .ant-carousel .slick-slide h3 {
+    color: #fff;
+  }
+  .slider-wrap img{
+    width: 100%;
+  }
+/* 轮播图样式结束 */
