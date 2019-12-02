@@ -55,6 +55,21 @@ const menuList =[
             }
         ]
     },
+    ,
+    {
+        title:'表格',
+        key:'/admin/table',
+        children:[
+            {
+                title:'基础表格',
+                key:'/admin/table/basic'
+            },
+            {
+                title:'高级表格',
+                key:'/admin/table/high'  
+            }
+        ]
+    },
     {
         title:'车辆地图',
         key:'/admin/bikeMap'
