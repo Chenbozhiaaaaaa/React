@@ -70,6 +70,14 @@ const menuList =[
             }
         ]
     },
+    
+    {
+        title:'城市管理',
+        key:'/admin/city'
+    },    {
+        title:'订单管理',
+        key:'/admin/order'
+    },
     {
         title:'车辆地图',
         key:'/admin/bikeMap'
