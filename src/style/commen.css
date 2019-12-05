@@ -1,5 +1,7 @@
 @import './loading.css';
-
+ul,li{
+    list-style: none;
+}
 .container .nav-left{
     height:calc(100vh) ;
     background-color: #001529;
@@ -18,3 +20,11 @@
     border:  1px solid #e8e8e8;
     margin-top: -3px;
 }
+
+.clearfix::after {
+    content: ' ';
+    clear: both;
+    display: block;
+    visibility: hidden;
+  }
+  

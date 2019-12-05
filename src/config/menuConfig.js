@@ -74,9 +74,23 @@ const menuList =[
     {
         title:'城市管理',
         key:'/admin/city'
-    },    {
+    },   {
         title:'订单管理',
-        key:'/admin/order'
+        key:'/admin/order',
+        btnList:[
+            {
+                title:'订单详情',
+                key:'detail'
+            },
+            {
+                title:'结束订单',
+                key:'finish'
+            }
+        ]
+    },
+    {
+        title:'员工管理',
+        key:'/admin/user'
     },
     {
         title:'车辆地图',
@@ -87,8 +101,8 @@ const menuList =[
         key:'/admin/charts',
         children:[
             {
-                title:"柱状图",
-                key:'/admin/charts/bar',
+                title:'柱形图',
+                key:'/admin/charts/bar'
             },
             {
                 title:'饼图',
@@ -96,10 +110,15 @@ const menuList =[
             },
             {
                 title:'折线图',
-                key:'/admin/charts/loading'
-            }
+                key:'/admin/charts/line'
+            },
         ]
+    },
+    {
+        title:'权限设置',
+        key:'/admin/permission'
     },
 ]
 
 export default menuList;
+

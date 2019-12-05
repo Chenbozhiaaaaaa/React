@@ -18,6 +18,8 @@ import HighTable from './pages/table/highTable'
 import City from './pages/city/index'
 import Order from './pages/order/index'
 import NoMatch from './pages/nomatch'
+import Common from './common'
+import OrderDetail from './pages/order/detail'
 
 export default class IRouter extends Component {
     render() {
@@ -25,7 +27,7 @@ export default class IRouter extends Component {
             <HashRouter>
                 <App>
                     <Route path="/login" component={Login} />
-                    <Route render={() =>
+                    <Route path="/admin" render={() =>
                         <Admin>
                             <Switch>
                                 <Route path="/admin/ui/buttons" component={Buttons} />
@@ -46,7 +48,13 @@ export default class IRouter extends Component {
                             </Switch>
                         </Admin>
                     } />
-                    <Route path="/admins" component={Admin} />
+                    <Route path="/common" render={()=>
+                        <Common>
+                            <Route  path="/common/order/detail/:orderId" component={OrderDetail}/>
+                        </Common>
+                    }
+                    />
+                    {/* <Route path="/order/detail" component={Admin} /> */}
                 </App>
             </HashRouter>
         )

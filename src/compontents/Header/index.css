@@ -7,6 +7,14 @@
     padding: 0 20px;
     text-align: right;
 }
+.header .header-top .logo{
+    text-align: left;
+    line-height: 60px;
+}
+.header .header-top img{
+    height: 60px;
+    vertical-align: top;
+}
 .header a{
     margin-left: 40px;
 }
@@ -37,3 +45,9 @@
 .header .breadcrumb .weather .date{
     margin-right: 10px;
 }
+
+.simple-page .header-top{
+      background:#1890ff;
+      color:#fff;
+    
+  }
