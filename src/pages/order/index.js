@@ -4,6 +4,7 @@ import axios from './../../axios/index'
 import Utils from './../../utils/utils';
 import FormItem from 'antd/lib/form/FormItem';
 import BaseForm from '../../compontents/BaseForm/index'
+import ETable from '../../compontents/ETable/index'
 const { Option } = Select;
 
 export default class Order extends Component {
@@ -210,7 +211,18 @@ export default class Order extends Component {
                     <Button type='primary' style={{ marginLeft: 10 }} onClick={this.handleConfirm}>结束订单</Button>
                 </Card>
                 <div className="content-wrap">
-                    <Table
+                    <ETable 
+                        updataSelectedItem = {Utils.updataSelectedItem.bind(this)}
+                        columns={columns}
+                        dataSource={this.state.list}
+                        selectedRowKeys={this.state.selectedRowKeys}
+                        selectedIds={this.state.selectedIds}
+                        selectedItem={this.state.selectedItem}
+                        pagination={this.state.pagination}
+                        // rowSelection="checkbox"
+
+                    />
+                    {/* <Table
                         bordered
                         columns={columns}
                         dataSource={this.state.list}
@@ -223,7 +235,7 @@ export default class Order extends Component {
                                 }
                             }
                         }}
-                    />
+                    /> */}
                 </div>
                 <Modal
                     title='结束订单'

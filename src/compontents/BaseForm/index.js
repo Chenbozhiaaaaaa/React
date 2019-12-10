@@ -81,6 +81,16 @@ class FilterForm extends Component {
                         </FormItem>
                     formItemList.push(CHECKBOX)
                 }
+                else if (item.type == 'DATE') {
+                    const Date = <FormItem label={label} key={field}>
+                        {
+                            getFieldDecorator([field])(
+                                <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
+                            )
+                        }
+                    </FormItem>;
+                    formItemList.push(Date)
+                }
             })
         }
         return formItemList
