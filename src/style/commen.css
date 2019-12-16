@@ -27,4 +27,6 @@ ul,li{
     display: block;
     visibility: hidden;
   }
-  
+  .operate-warp button{
+    margin-left: 10px;
+  }

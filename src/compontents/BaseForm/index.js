@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import Utils from './../../utils/utils';    
+import Utils from './../../utils/utils';
 import { Input, Select, Form, Button, Checkbox, Radio, DatePicker } from 'antd'
 import FormItem from 'antd/lib/form/FormItem';
 const { Option } = Select
 class FilterForm extends Component {
-    handleFilterSubmit=()=>{
+    handleFilterSubmit = () => {
         let fieldsValue = this.props.getFieldsValue();
         this.props.filterSubmit(fieldsValue)
     }
-    reset =()=>{
+    reset = () => {
         this.props.form.resetFields();
     }
     initFormList = () => {
@@ -23,31 +23,49 @@ class FilterForm extends Component {
                 let initialValue = item.initialValue || ''
                 let placeholder = item.placeholder
                 let width = item.width
-                if(item.type == "时间查询"){
-                    const begin_time =
-                    <FormItem label='订单时间' key={field} >
+                if (item.type == "城市") {
+                    const city = <FormItem label="城市" key={field}>
                         {
-                            getFieldDecorator('begin_time')(
-                                <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
-                                )
+                            getFieldDecorator('city', {
+                                initialValue: '0'
+                            })(
+                                <Select
+                                    style={{ width: 80 }}
+                                    placeholder={placeholder}
+                                >
+                                    {Utils.getOptionList([{ id: '0', name: '全部' }, { id: '1', name: '北京' }, { id: '2', name: '上海' }, { id: '3', name: '天津' }, { id: '4', name: '杭州' }])}
+                                </Select>
+                            )
                         }
                     </FormItem>;
-                formItemList.push(begin_time)
-                const end_time =
-                    <FormItem label="~" colon={false} key={item.field1} >
-                        {
-                            getFieldDecorator('end_time')(
-                                <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
+                    formItemList.push(city)
+
+                }
+                else if (item.type == "时间查询") {
+                    const begin_time =
+                        <FormItem label='订单时间' key={field} >
+                            {
+                                getFieldDecorator('begin_time')(
+                                    <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
                                 )
-                        }
-                    </FormItem>
-                formItemList.push(end_time)
+                            }
+                        </FormItem>;
+                    formItemList.push(begin_time)
+                    const end_time =
+                        <FormItem label="~" colon={false} key={item.field1} >
+                            {
+                                getFieldDecorator('end_time')(
+                                    <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
+                                )
+                            }
+                        </FormItem>
+                    formItemList.push(end_time)
                 }
                 else if (item.type == "INPUT") {
                     const INPUT =
                         <FormItem label={label} key={field} >
                             {
-                                getFieldDecorator(field,{ initialValue: initialValue })(
+                                getFieldDecorator(field, { initialValue: initialValue })(
                                     <Input type='text' placeholder={placeholder}></Input>)
                             }
                         </FormItem>
@@ -57,7 +75,7 @@ class FilterForm extends Component {
                     const SELECT =
                         <FormItem label={label} key={field} >
                             {
-                                getFieldDecorator(field, {initialValue: initialValue })(
+                                getFieldDecorator(field, { initialValue: initialValue })(
                                     <Select placeholder={placeholder} style={{ width: width }}>
                                         {Utils.getOptionList(item.List)}
                                     </Select>)
