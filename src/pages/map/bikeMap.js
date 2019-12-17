@@ -102,8 +102,6 @@ export default class BikeMap extends Component {
                 params:this.params
             }
         }).then((res)=>{
-            console.log(res);
-            
             if(res.code==0){
                 this.setState({
                     total_count:res.result.total_count
