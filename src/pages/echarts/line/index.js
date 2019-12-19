@@ -37,9 +37,7 @@ export default class Line extends Component {
                 name:"订单量",
                 data: [820, 932, 901, 934, 1290, 1330, 1320],
                 type: 'line'
-            }]
-         
-        
+            }] 
         }
         return option;
     }
