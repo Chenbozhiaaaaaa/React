@@ -3,8 +3,10 @@ import { Row, Col } from 'antd'
 import './index.css'
 import Util from '../../utils/utils'
 import axios from '../../axios/index'
+import { connect } from 'react-redux';
+
 import Axios from 'axios'
-export default class Header extends Component {
+ class Header extends Component {
     componentWillMount() {
         this.setState({
             userName: '我的天呐'
@@ -25,17 +27,6 @@ export default class Header extends Component {
     }
     getWeatherAPIData() {
         let city = '北京'
-        // axios.jsonp({
-        //     url:`http://wthrcdn.etouch.cn/weather_mini?city=${city}`
-        // }).then(res=>{
-        //     if(res.status=='1000'){
-        //         this.setState({
-        //             weatherDatas:res.data.forecast[0].type,
-        //             weatherDatash:(res.data.forecast[0].high).substring(2),
-        //             weatherDatasl:(res.data.forecast[0].low).substring(2)
-        //         })
-        //     }
-        // })
         // 这里单独引入了一个axios 因为天气接口是第三方的 封装的jsonp不能满足格式
         Axios.get(`https://www.tianqiapi.com/api/?appid=58984568&appsecret=6i21A53n&version=v6&city=%E5%8C%97%E4%BA%AC`).then(res => {
             let meta = res.data
@@ -71,7 +62,7 @@ export default class Header extends Component {
                     menuType?'':
                 <Row className="breadcrumb">
                     <Col span={4} className="breadcrumb-title">
-                        首页
+                    { this.props.menuName }
                     </Col>
                     <Col span={20} className='weather'>
                         <span className="date">{this.state.sysTime}</span>
@@ -86,3 +77,9 @@ export default class Header extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        menuName:state.menuName
+    }
+}
+export default connect(mapStateToProps)(Header);
